@@ -18,6 +18,10 @@
 
 // Event Listeners 2-8 // Trip Planning
 
+    // Step 0 // set up currentlyDraggedObject
+
+    let currentlyDragged = null; 
+
     // Step 1 // Declare draggable obj + drag zone. 
 
        let draggableObjects = document.querySelector('.container.home').querySelectorAll(".text-content, .img-content");
@@ -49,14 +53,37 @@
 
     // Step 3 // Declare event handler functions.
 
-        function onDrag(event) {};
-        function onDragStart(event){};
-        function onDragEnd(event){};
-        function onDragEnter(event){};
-        function onDragLeave(event){};
+        // draggable object event handlers
 
-        function onDrop(event){};
-        function onDragOver(event){};
+        function onDrag(event) {
+            console.log("dragging!");
+        };
+
+        function onDragStart(event){ 
+            currentlyDragged = event.target
+        };
+
+        function onDragEnd(event){ 
+            console.log("stopped dragging!");
+            currentlyDragged = null 
+        };
+
+        function onDragEnter(event){ 
+            event.preventDefault() 
+        };
+
+        function onDragLeave(event){
+
+        };
+
+        // drag zone event handlers
+
+        function onDrop(event){
+            event.preventDefault();
+        };
+        function onDragOver(event){
+            event.preventDefault();
+        };
 
     // for more info
     // drag and drop interaces
@@ -75,8 +102,8 @@
 
         function addButtonFunctionality(destination){
 
-            let button = destination.querySelector(".btn"); // 9
-            button.addEventListener("click", onButtonClick);
+            let button = destination.querySelector(".btn"); 
+            button.addEventListener("click", onButtonClick); // 9
         
         }
 
@@ -87,7 +114,7 @@
     // Step 3 // Declare event handler functions for buttons.
 
         function onButtonClick(event){
-
+            
         };
     
 
