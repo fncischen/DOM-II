@@ -1,19 +1,31 @@
 // Your code goes here
 
+// Event Listener 1 // Horizontal Scroll Bar 
 
+    // Step 1 // declare photo 
 
+    let photo = document.querySelector(".container.home").querySelector(".intro").querySelector("img");
 
+    // Step 2 // set up event listeners;
+
+    photo.addEventListener("mouseover", onMouseOver); // 1
+    
+    // Step 3 // set up event handler; 
+
+    function onMouseOver(event) {
+
+    }
 
 // Event Listeners 2-8 // Trip Planning
 
     // Step 1 // Declare draggable obj + drag zone. 
 
-        draggableObjects = document.querySelector('.container.home').querySelectorAll(".text-content, .img-content");
-        dragzone = document.querySelector('.container.home');
+       let draggableObjects = document.querySelector('.container.home').querySelectorAll(".text-content, .img-content");
+       let dragzone = document.querySelector('.container.home');
 
     // Step 2 // Set up event listeners for draggable & drag zone.
 
-        // helper function
+        // helper function // set up all relevant event listeners here
 
         function makeDraggable(draggable) {
 
@@ -26,11 +38,11 @@
 
         };
 
-        // draggable 
+        // for all draggable objects
 
-        draggableObjects.forEach(makeDraggable);
+        draggableObjects.forEach(makeDraggable); // iterate over each draggable obj. 
 
-        // dragzone
+        // for drag zone
 
         dragzone.addEventListener("drop", onDrop); // 7
         dragzone.addEventListener("dragover", onDragOver); // 8
@@ -51,14 +63,32 @@
     // https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
 
 
-// Event Listeners 9-10
+// Event Listener 9 // buttons 
 
-    // Step 1 // Declare destination buttons.
+    // Step 1 // Declare destination.
 
-        destinations = document.querySelector(".content-pick").querySelectorAll(".destination");
+       let destinations = document.querySelector(".content-pick").querySelectorAll(".destination");
 
     // Step 2 // add event listeners.
 
+        // helper function // set up event listeners for each destination button.
 
+        function addButtonFunctionality(destination){
 
-    // Step 3 // Declare event handler functions.
+            let button = destination.querySelector(".btn"); // 9
+            button.addEventListener("click", onButtonClick);
+        
+        }
+
+        // iterate over each destination
+
+        destinations.forEach(addButtonFunctionality);
+
+    // Step 3 // Declare event handler functions for buttons.
+
+        function onButtonClick(event){
+
+        };
+    
+
+// Event Listener 10 // Text Box  
