@@ -79,11 +79,14 @@
         };
 
         function onDragEnter(event){ 
-            event.preventDefault() 
+            event.preventDefault();
+            dragzone.style.border = "4px solid blue";
+            console.log("We're in drop zone!");
         };
 
         function onDragLeave(event){
-
+            console.log("We're leaving drop zone!");
+            dragzone.style.border = null;
         };
 
         // drag zone event handlers
@@ -127,8 +130,6 @@
     // Step 3 // Declare event handler functions for buttons.
 
         function onButtonClick(event){
-            Console.log("Pressed button!");
+            console.log("Pressed button!");
         };
     
-
-// Event Listener 10 // Text Box  
